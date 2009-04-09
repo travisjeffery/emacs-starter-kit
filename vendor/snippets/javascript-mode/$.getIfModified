@@ -1,0 +1,6 @@
+# This was cloned from a TextMate bundle for yasnippet.
+# --
+\$.getIfModified('${1:/test/test.cgi}'${3/(.+)/(?1:, function\(data\){
+ :)/}${3:alert( $"Data loaded: " + data )//optional stuff to do after get}${3/(.+)/(?1:;
+}:)/});
+$0

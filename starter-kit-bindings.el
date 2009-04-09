@@ -49,8 +49,10 @@
 ;; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
 
-;; Start a regular shell if you prefer that.
-(global-set-key (kbd "C-x C-m") 'shell)
+;; Faster m-x, replaced in init.el for smex
+;; (global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
+(global-set-key (kbd "s-w") 'mark-current-word)
 
 ;; Fetch the contents at a URL, display it raw.
 (global-set-key (kbd "C-x h") 'view-url)

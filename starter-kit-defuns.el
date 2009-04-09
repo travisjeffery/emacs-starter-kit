@@ -157,5 +157,22 @@
   (interactive)
   (message (if (y-or-n-p "Do you have a test for that? ") "Good." "Bad!")))
 
+(defun mark-current-word ()
+    "Put point at beginning of current word, set mark at end."
+    (interactive)
+    (let* ((opoint (point))
+           (word (current-word))
+           (word-length (length word)))
+      (if (save-excursion
+            ;; Avoid signaling error when moving beyond buffer.
+            (if (> (point-min)  (- (point) word-length))
+                (beginning-of-buffer)
+              (forward-char (- (length word))))
+            (search-forward word (+ opoint (length word))
+                            'noerror))
+          (progn (push-mark (match-end 0) nil t)
+                 (goto-char (match-beginning 0)))
+        (error "No word at point" word))))
+
 (provide 'starter-kit-defuns)
 ;;; starter-kit-defuns.el ends here

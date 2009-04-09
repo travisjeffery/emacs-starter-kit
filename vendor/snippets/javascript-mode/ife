@@ -1,0 +1,3 @@
+# This was cloned from a TextMate bundle for yasnippet.
+# --
+if (${1:true}) {${0:$TM_SELECTED_TEXT}} else{};

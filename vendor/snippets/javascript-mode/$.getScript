@@ -1,0 +1,6 @@
+# This was cloned from a TextMate bundle for yasnippet.
+# --
+\$.getScript('${1:somescript.js}'${3/(.+)/(?1:, function\(\){
+ :)/}${3://optional stuff to do after getScript}${3/(.+)/(?1:;
+}:)/});
+$0

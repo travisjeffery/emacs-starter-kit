@@ -1,0 +1,6 @@
+# This was cloned from a TextMate bundle for yasnippet.
+# --
+\$.get('${1:/test/ajax-test.xml}'${2/(.+)/(?1:, function\(xml\){
+ :)/}${2:alert( $("title",xml).text() )//optional stuff to do after get}${2/(.+)/(?1:;
+}:)/});
+$0
